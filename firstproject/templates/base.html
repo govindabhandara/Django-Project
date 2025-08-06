@@ -1,0 +1,16 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      padding-bottom: 100px; /* create space for fixed footer */
+    }
+  </style>
+</head>
+<body>
+  {% include "header.html" %}
+  {% block content %}{% endblock content %}
+  {% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,150 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 150px;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+/* Main content styles */
+.content {
+  background-color: white;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Footer styles */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  /* position: fixed; bottom: 0; removed */
+}
+
+
+/* Image styles */
+img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Form styles */
+form {
+  margin-top: 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #555;
+}
+
+.services-section {
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-card i {
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .service-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .service-description {
+      color: #555;
+      font-size: 15px;
+    }

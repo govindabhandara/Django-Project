@@ -1,0 +1,22 @@
+
+   {% extends "base.html" %}
+   {% block content %}
+   <!-- Contact Form -->
+  <section class="contact">
+    <h3>Contact Me</h3>
+    <p>Hello, your submitted data : {{final}}</p>
+    <form method="post">
+      {% csrf_token %}
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message"></textarea><br>
+
+      <input type="submit" value="Send">
+    </form>
+  </section>
+{% endblock content %}

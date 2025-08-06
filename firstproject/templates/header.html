@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | My Portfolio</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+  <ul class="navbar">
+    <!-- {{request.path}} -->
+    <li class="{% if request.path == '/' %}active{% endif %}">
+    <a href="{% url 'home' %}">Home</a></li>
+    <li class="{% if request.path == '/about/' %}active{% endif %}">
+    <a href="{% url 'about' %}">About Us</a></li>
+    <li class="{% if request.path == '/service/' %}active{% endif %}">
+    <a href="{% url 'service' %}">Services</a></li>
+    <li class="{% if request.path == '/projects/' %}active{% endif %}">
+    <a href="{% url 'projects' %}">Projects</a></li>
+    {% url 'contact' as url %}
+    <li class="{% if request.path == url %}active{% endif %}">
+    <a href="{{url}}">Contact</a>
+    </li>
+  </ul>
+</nav>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Hello, I'm Govinda</h2>
+    <p>A Passionate Full-Stack Developer</p>
+    <img src="{% static 'img/image.avif' %}" alt="Govinda's Profile" width="200">
+  </section>

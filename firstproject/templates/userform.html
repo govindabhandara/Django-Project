@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Contact Form -->
+<section class="contact">
+  <h3>User Form</h3>
+  <form method="post" action=" {% url 'submitform' %} ">
+    {% csrf_token %}
+
+    {{form}}
+      <!-- <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message"></textarea><br> -->
+
+      <input type="submit" value="Send" style="background-color: orange;">
+
+      <input type="text">
+  </form>
+
+  <p>{{ final }}</p>
+</section>
+{% endblock content %}
