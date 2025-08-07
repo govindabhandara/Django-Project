@@ -31,6 +31,16 @@
 </nav>
 </header>
 
+ <!-- header.html -->
+<marquee onmouseover="this.stop()" onmouseout="this.start()">
+  {% for news in all_news %}
+  <a href="{% url 'news-detail' news.news_slug %}" style="color: inherit; text-decoration: none;">
+    {{ news.news_title }} &nbsp;&nbsp;&nbsp;
+  </a>
+  {% endfor %}
+
+</marquee>
+
   <!-- Hero Section -->
   <section class="hero">
     <h2>Hello, I'm Govinda</h2>

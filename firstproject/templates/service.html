@@ -49,18 +49,82 @@
       color: #555;
       font-size: 15px;
     }
+
+    .pagination-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;  /* Centers the pagination horizontally */
+}
+
+.pagination-list li {
+    margin-right: 10px;  /* Space between pagination items */
+}
+
+.pagination-list a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.pagination-list a:hover {
+    background-color: #ddd;
+}
+
+.pagination-list .active a {
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+}
+
    </style> 
 
 <section class="services-section">
+  <form method="get">
+    <input type="text" name="servicename" value=""/>
+    <input type="submit" value="search"/>
+  </form>
   <h2><i class="fas fa-cogs"></i> Our Services</h2>
   <div class="service-grid">
     {% for n in servicesData %}
     <div class="service-card">
     <i class="{{n.service_icon}}"></i>
     <div class="service-title">{{n.service_title}}</div>
-    <p class="service-description">{{n.service_des | upper }}</p>
+    <p class="service-description">{{n.service_des }}</p>
+    <!-- <img src="/media/ {{service.django}}"> -->
+     <img src="{{ MEDIA_URL }}{{ service.django }}" alt="{{ service.name }}" class="img-fluid">
     </div>
+    {% empty %}
+    No data found
     {% endfor %}
+  </div>
+   <!-- Pagination Links -->
+  <div class="pagination">
+    <ul class="pagination-list">
+      {% if servicesData.has_previous %}
+      <li><a href="?page=1&servicename={{ request.GET.servicename }}">First</a></li>
+      <li><a href="?page={{ servicesData.previous_page_number }}&servicename={{ request.GET.servicename }}">Previous</a></li>
+      {% endif %}
+
+      {% for n in totalpagelist%}
+      <li class="pagination-list"><a href="?page=1&servicename={{ request.GET.servicename }}">{{n}}</a></li>
+      {% endfor %}
+
+      <!-- Page Numbers -->
+      {% for num in servicesData.paginator.page_range %}
+        <li class="{% if servicesData.number == num %}active{% endif %}">
+          <a href="?page={{ num }}&servicename={{ request.GET.servicename }}">{{ num }}</a>
+        </li>
+      {% endfor %}
+
+      {% if servicesData.has_next %}
+      <li><a href="?page={{ servicesData.next_page_number }}&servicename={{ request.GET.servicename }}">Next</a></li>
+      <li><a href="?page={{ lastpage}}">Last</a></li>
+      {% endif %}
+    </ul>
   </div>
 </section>
 {% endblock %}

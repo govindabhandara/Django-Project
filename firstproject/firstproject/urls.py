@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from firstproject import views
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin-panel/', admin.site.urls),
     path('',views.homepage,name="home"),
@@ -28,5 +30,9 @@ urlpatterns = [
     path('service/',views.service, name="service"),
     path('userform/',views.userform, name="userform"),
     path('submitform/',views.submitform,name="submitform"),
-    
+    path('newsdetail/<slug:slug>/', views.newsDetail, name='news-detail'),
+    path('saveenquiry/',views.saveEnquiry,name='saveenquiry'),
 ]
+
+if settings.DEBUG:
+    urlpatterns + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

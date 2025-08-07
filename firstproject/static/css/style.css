@@ -57,13 +57,15 @@ header h1 {
 
 /* Footer styles */
 footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  width: 100%;
-  /* position: fixed; bottom: 0; removed */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
+
 
 
 /* Image styles */
@@ -148,3 +150,5 @@ form input[type="submit"]:hover {
       color: #555;
       font-size: 15px;
     }
+
+    
